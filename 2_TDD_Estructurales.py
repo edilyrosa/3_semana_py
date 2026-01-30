@@ -47,7 +47,8 @@ print(lista_numeros)
 lista_numeros.append('ultimo')
 print(lista_numeros) # [1, 2, 3, 4, 5, False, 'ultimo']
 
-#?⭐ Metodo pop([index]): elimina y retorna el elemento en la posición parametro (si no se le pasa, elimina el último)
+#?⭐ Metodo pop([index]): elimina y retorna el elemento en la posición parametro 
+# (si no se le pasa, elimina el último)
 ele_eliminado = lista_numeros.pop()
 print('Elemento eliminado:', ele_eliminado) # 'ultimo'
 print(lista_numeros) # [1, 2, 3, 4, 5, False]
@@ -65,18 +66,20 @@ print(lista_numeros) #[False, 1, 2, 3, 4, 5]
 lista_numeros.sort( reverse=True ) # ordena en orden descendente
 print(lista_numeros) # [5, 4, 3, 2, 1, False]
 
-#?⭐ Metodo index(ele, [start, end]): retorna el índice o posision de la primera ocurrencia del elemento parametro.
+#?⭐ Metodo index(ele, [start, end]): retorna el índice o posision de la 
+# primera ocurrencia del elemento parametro.
 print(lista_numeros.index(5)) # 0
 print(lista_numeros.index(3, 1, 5)) # 2 → Busco y retorno el 3 entre las posiciones 1 y 5.
 
-# TODO: 🧠TAREA:Existen otros metodos de las listas, te invito a que los investigues y pruebes. Los usaremos mas adelante.
-
+# TODO: 🧠TAREA:Existen otros metodos de las listas, te invito a que los investigues
+# y pruebes. Los usaremos mas adelante.
 
 
 # # *************************** 2. TUPLAS: (tuple)
 # # Son colecciones ordenadas de datos, el orden es secuencial y preciso.
 # # Cada dato coleccionado es un elemento.
-# # A diferencia de las listas, las tuplas son inmutables, no se pueden modificar, agregar o eliminar elementos.
+# # A diferencia de las listas, las tuplas son inmutables, no se pueden modificar, 
+# agregar o eliminar elementos.
 # # Se sabe su tamaño con la función con len(my_tuple).
 # #! Acceder a una posición fuera de rango, genera un error.
 
@@ -88,7 +91,8 @@ tupla = 1, 2, True # Otra forma de crear tuplas, sin los parentesis.
 print(tupla)
 
 # #& 💡Utilidad de las tuplas: 
-# # Entre otras utilidades, es la forma de empaquetar un conjunto de data que por seguridad no deseamos que sea modificable.
+# # Entre otras utilidades, es la forma de empaquetar un conjunto de data 
+# que por seguridad no deseamos que sea modificable.
 
 # #?⭐ Acceso: meidante su índice (posición)
 print(tupla_numeros[5]) # False
