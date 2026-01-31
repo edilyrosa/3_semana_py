@@ -1,136 +1,79 @@
+# listas , tuplas, dict, conjuntos
+
+# listas → [ele, ele, ele, ...] son mutables y ordenadas.
 
 
-# *************************** 1. LAS LISTAS: son array, vector, arreglo, matrices.
-# son colecciones ordenadas de datos, el orden es secuencial y preciso.
-# Cada dato coleccionado es un elemento.
-# La lista puede contener cualquier tipo de dato, incluso otras listas (matrices).
-# Al elemento se accede por su posición (índice, que comienza desde 0), para:
-# √ Obtenerlo, √ Reasignale valor, √ Eliminarlo... Entonces las listas son mutables.
-#!❌ Acceder a una posición fuera de rango, genera un error.
-
-
-#?⭐ Creación de una lista: Se representa, conteniendo a sus elementos entre corchetes []
-lista_numeros = [1,2,3,4,'5', False]
-print(lista_numeros) # [1, 2, 3, 4, '5', False]
-
-#& 💡Utilidad de las listas: 
-# Entre otras utilidades, es la forma de empaquetar un conjunto de data relacionada para, 
-# por ejemplo, transportarla de un sistema a otro: https://jsonplaceholder.typicode.com/users
-
-
-#?⭐ Acceso: medidante su índice (posición)
-print(lista_numeros[5]) # False → Retorna el elemento en la posición 5
-print(lista_numeros[-2]) # "5"  → Con indices negativos, accedemos desde el final (-1 es el último ele)
-
-# #?⭐ Saber el TDD de las Listas
-print('TDD de una lista', type(lista_numeros)) # <class 'list'>
-print('TDD del ultimo elemento', type(lista_numeros[-1])) # <class 'bool'>
-
-
-#?⭐ Modificación de un elemento
-lista_numeros[-2] = 5
-print(lista_numeros) # [1, 2, 3, 4, 5, False]
-
-#?⭐ Longitud
-print(len(lista_numeros)) #6
-
-#?⭐ ❌ Acceder o Modificar una posición fuera de rango, genera un error.
-#lista_numeros[6] = 'ultimo'  #! IndexError: list assignment index out of range
+#&==============================LISTAS
+#* creacion
+lista_numeros = [1, 2, 3, 4, '5', False]
 print(lista_numeros)
 
-#? 🤔🙋🏻‍♂️⁉️entonces como agregar elementos a una lista?
+# acceso con la posi del ele dentro de la lista, comienza desde 0
 
-#?⭐ Metodo append(ele): agrega su parametro al final de la lista.
-lista_numeros.append('ultimo')
-print(lista_numeros) # [1, 2, 3, 4, 5, False, 'ultimo']
+print(lista_numeros[0]) #1
+print(lista_numeros[4]) # '5'
+print(lista_numeros[-1]) # False
+print(lista_numeros[-2]) # '5'
 
-#?⭐ Metodo pop([index]): elimina y retorna el elemento en la posición parametro 
-# (si no se le pasa, elimina el último)
+print('el tipo es: ', type(lista_numeros)) #el tipo es:  <class 'list'>
+print('el tipo es: ', type(lista_numeros[-1])) #el tipo es:  <class 'bool'>
+print('el tipo es: ', type(lista_numeros[-2])) #el tipo es:  <class 'str'>
+
+lista_numeros[-2] = 5
+print('el tipo es: ', type(lista_numeros[-2])) # el tipo es:  <class 'int'>
+print(lista_numeros)
+
+print(len(lista_numeros)) # 6
+
+#lista_numeros[6] = True #!ndexError: list assignment index out of range
+
+lista_numeros.append('ultimo') #[1, 2, 3, 4, 5, False, 'ultimo']
+print(lista_numeros)
+
 ele_eliminado = lista_numeros.pop()
-print('Elemento eliminado:', ele_eliminado) # 'ultimo'
-print(lista_numeros) # [1, 2, 3, 4, 5, False]
+# lista_numeros.pop(0) → pasale por parametro la pos del elemento que queres eliminar, 
+# sino le pasas post  o sea nada de p[arametros, eliminada el ultimo.
+print(f'el eliminado es "{ele_eliminado}"', lista_numeros)
 
-#?⭐ Metodo remove(ele): elimina la primera ocurrencia del elemento parametro.
+
 lista_numeros.append(5)
-print(lista_numeros) # [1, 2, 3, 4, 5, False, 5]
+print(lista_numeros)
 lista_numeros.remove(5)
-print(lista_numeros) # [1, 2, 3, 4, False, 5]
+# lista.remove(ele, start, end)
 
-#?⭐ Metodo sort(): ordena la lista in-place (modifica la lista original), retorna None.
-# Funciona bien si todos los elementos son del mismo comparables.
-lista_numeros.sort()
-print(lista_numeros) #[False, 1, 2, 3, 4, 5]
-lista_numeros.sort( reverse=True ) # ordena en orden descendente
-print(lista_numeros) # [5, 4, 3, 2, 1, False]
+lista_numeros.sort() #lso elementos dentro del iterable deben tener el mismo TDD par que peudan ser ordenados
+print(lista_numeros)
+lista_numeros.sort(reverse=True) 
+print(lista_numeros)
 
-#?⭐ Metodo index(ele, [start, end]): retorna el índice o posision de la 
-# primera ocurrencia del elemento parametro.
-print(lista_numeros.index(5)) # 0
-print(lista_numeros.index(3, 1, 5)) # 2 → Busco y retorno el 3 entre las posiciones 1 y 5.
+#&=========================TUPLAS
+tupla_numerica = (1, 2, 3, 4, False, 'soy tupla')
+print(tupla_numerica)
 
-# TODO: 🧠TAREA:Existen otros metodos de las listas, te invito a que los investigues
-# y pruebes. Los usaremos mas adelante.
-
-
-# *************************** 2. TUPLAS: (tuple)
-# Son colecciones ordenadas de datos, el orden es secuencial y preciso.
-# Cada dato coleccionado es un elemento.
-# A diferencia de las listas, son inmutables, no se pueden modificar, agregar o eliminar elementos.
-# si ese es tu objetivo, haz un casting a lista.
-# #! Acceder a una posición fuera de rango, genera un error.
-
-# #?⭐ Creación de una tupla: Se representa, conteniendo a sus elementos entre paréntesis ()
-tupla_numeros = (1,2,3,4,'5', False) #Con parentesis.
-print(tupla_numeros)
-
-tupla = 1, 2, True # Otra forma de crear tuplas, SIN los parentesis.
+tupla = 1, 'Sam', 2.2
 print(tupla)
 
-# #& 💡Utilidad de las tuplas: 
-# # Entre otras utilidades, es la forma de empaquetar un conjunto de data 
-# que por seguridad no deseamos que sea modificable.
+print(type(tupla)) #<class 'tuple'>
+ultimo = tupla_numerica[-1]
+print(ultimo) #False
 
-# #?⭐ Acceso: meidante su índice (posición)
-print(tupla_numeros[5]) # False
-print(tupla_numeros[-2]) # "5" Con indices negativos, accedemos desde el final (-1 es el último ele)
+# 💡 las tupla son inmutables
+#tupla_numerica[-1] = True #!TypeError: 'tuple' object does not support item assignment
 
-# #?⭐ ❌❌❌ NO podemos Modificar las tuplas
-# tupla_numeros[-2] = 5 #! TypeError: 'tuple' object does not support item assignment
+print(len(tupla_numerica)) #5
+ 
+lista_de_tupla = list(tupla_numerica)
+print(lista_de_tupla)
+print(tupla_numerica)
 
-# #?⭐ Saber el TDD de las Tuplas
-print('TDD de una tupla', type(tupla_numeros)) # <class 'tuple'>
-print('TDD del ultimo elemento', type(tupla_numeros[-1])) # <class 'bool'>
+lista_de_tupla.append('soy el ultimo')
+print(lista_de_tupla)
 
-# #?⭐ Longitud
-print(len(tupla_numeros)) #6
+tupla_de_lista = tuple(lista_de_tupla)
+print(tupla_de_lista)
 
-# *************************** METODOS CONSTRUCTORES: list(mi_iletable), tuple(mi_iterable). 
-# Existen metodos constructores de listas y tuplas, cuyo parametro es el iterable a comvertir.
-# 💡Utilidad: hacer casting de un tipo de dato a otro por sus caracteristicas. Ejemplo: recibes 
-# una tupla pero necesitas una lista para modificar sus ele, entonces haces el casting. 
-#? Ejemplo:
-print('--- METODOS CONSTRUCTORES ---')
-print('Tupla', tupla_numeros) # (1, 2, 3, 4, '5', False)
-lista_desde_tupla = list(tupla_numeros)
-print('lista desde tupla', lista_desde_tupla) # [1, 2, 3, 4, '5', False]
-
-print('Lista', lista_numeros) # (1, 2, 3, 4, '5', False)
-tupla_desde_lista = tuple(lista_numeros)
-print('tupla desde lista', tupla_desde_lista) # (1, 2, 3, 4, 5, False)
-
-#************************** TDD ESTRUCUTRALES: STR (CADENA DE TEXTO)
+#&==========================STR
 nombre = 'Edily'
-print(len(nombre)) # 5 → Longitud de la cadena de texto.
-print(nombre[0]) # E → Acceso por índice a una cadena de texto.
-#! str sin inmutables: una vez que creado, no puedes cambiar sus caracteres
-# nombre[1] = 's' INMUTABES → #! TypeError: 'str' object does not support item assignment.
-# tambien los podemos recorrer con ciclos, cuyas estructuras veremos a continuacion
-
-
-# ***************************** OTROS TIPOS DE COLECCIONES ITERABLES
-# Existen otros tipos de colecciones en Python que también son iterables (ademas de lista, tupla), como:
-# diccionario, conjunto. Los veremos luego.
-
-# TODO: A CONTINUACION LOS CICLOS: para recorrer, mapear o filtrar los elementos de los iterables. 
-# ? ir a: 3_ciclos.py
-# VEREMOS: FOR, WHILE, BREAK, CONTINUE, RANGE()
+primera_letra = nombre[0]
+nombre[1] = 's' #!TypeError: 'str' object does not support item assignment
+print(primera_letra)
