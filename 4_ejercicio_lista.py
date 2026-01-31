@@ -1,5 +1,4 @@
 import streamlit as st
-
 st.title("🛒 Producto destacado")
 
 productos = [
@@ -15,19 +14,15 @@ productos = [
         9.01,
         "men's clothing",
     ],
-    
 ]
 
-# Ciclo for (iterables)
+#* Ciclo for para recorrer la lista de productos, por cada producto dentro de la lista.
 for producto in productos:
     st.image(producto[1], width=250)
     st.subheader(producto[0])
     st.write("💲 Precio:", producto[2])
     st.write("📝", producto[3])
     st.divider()
-
-
-
 
 # TODO: Cliclos Anidados - Matrices.
 #? Explicacion ir a: 4_ciclos_anidados_matrices.py

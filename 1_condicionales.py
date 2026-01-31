@@ -55,7 +55,7 @@
 
 #***************************CLASE DE CONDIONALES.
 
-#& IF - ANIDADOS
+#&================ IF - ANIDADOS
 # Determine si usuario puede Conducir?
 # condicion: debe tener licencia (True/False) y ( (ser mayor de edad (>=18)  o estar emancipado (si/no) )
 print('\nDeterminando si usuario puede Conducir?')
@@ -69,7 +69,7 @@ if licencia == 'si':
     else: print('❌ No eres mayor ni eres emancipado, NO Puede Conducir')
 else: print('❌ Legalmente NO Puede Conducir sin licencia')
 
-#& TERNARIO
+#&================ TERNARIO
 # Es una forma corta de escribir una sentencia if-else en una sola línea.
 # Sintaxis: valor_si_verdadero if condición else valor_si_falso
 print('\nAsignamos a una variable bandera de usuario autenticado o no')
@@ -78,30 +78,28 @@ autenticado = bool(int(input('Usuario autenticado? (0/1):')))
 mensaje = '✅Usuario autenticado' if autenticado else '❌Usuario no autenticado'
 print(mensaje)
 
-#& match-case (match-case)
+#&================ match-case
 # Es una estructura de control que permite ejecutar diferentes bloques de código
 # según el valor de una variable o expresión.
 opcion = int(input("Selecciona una opción (1-7): "))
 
 match opcion:
-    case 1: # Coincidencia exacta (Literal)
+    case 1:                     # Coincidencia exacta (Literal)
         print("Elegiste 1.")
-    # case 2 | 3: # El símbolo | significa "OR" (O una u otra)
-    case 2 | 3 | 4 : # El símbolo | significa "OR" (O una u otra) En un match-case, no se usa la palabra or, sino el símbolo de tubería o pipe (|) para representar la unión de patrones.
+
+    case 2 | 3 | 4 :            # Simbolo de tubería o pipe (|), aca NO se usa "or". Usado para representar la unión de patrones.
         print("Elegiste 2, 3 o 4.")
         
-    case n if n > 4 and n <= 7: # Uso de Guardia (IF) para rangos,  # Aquí el 'and' se escribe normal porque está dentro de un 'if'
+    case n if n > 4 and n <= 7: # Guardia (IF) para rangos,  usa 'and' porque está dentro de un 'if'
         print("Elegiste 5, 6 o 7")
         
-    case n if n >= 8: # Uso de Guardia (IF) para rangos
+    case n if n >= 8:           # Guardia (IF) para rangos
         print(f"La opción {n} está fuera de rango.")
         
     case _: # Comodín
         print("Opción no válida.") #! < 0 son opciones no válidas
         
-# el case _ siempre debe ir al final de la estructura match-case. 
-# Si intentas poner otro case después de este, Python arrojará un error 
-# porque ese código sería inalcanzable.    
+# el "case _" debe ir al final de la estructura match-case, eliminando cualquier otro case después de este.  
 
 # TODO PROXIMO_TEMA:
     # TIPOS DE DATOS ESTRUCTURALES: LISTAS, TUPLAS, STR

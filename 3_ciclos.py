@@ -26,13 +26,14 @@ for e in lista:
     lista_new.append(e**2) #*✅ Ya las conoces, lo agrega al final de la lista
 print('lista_new', lista_new) #lista_new [1, 4, 9, 16, 25]
 
+
 #? 2.⭐ Puedes establecer un condicional dentro de un bucle.
 for ele in lista:
     if(ele %2 == 0):
         print(f'Par dentro de la lista: {ele}') # los pares son 2, 4
 
-#? 3.⭐ Sentencias de control dentro de bucles:
 
+#? 3.⭐ Sentencias de control dentro de bucles:
 #? √ break: 
 # Interrumpe y sale completamente del bucle, sin importar la condición del ciclo.
 # y continua ejecutando la programacion principal
@@ -74,22 +75,21 @@ while i <= 5:
 
 
 #& *******************EXISTEN OTROS METODOS CICLICOS PARA MANIPULAR ITERABLES
-#?⭐ Metodo map()
-# Función que espera 2 parametros 
+#?⭐ Metodo map(): parametros:
 # 1er parametro: la función que se aplica a cada elemento
 # 2do parametro: iterable (lista, tupla...) de los elementos a procesar
 # Rertorna:👀 otro iterable usando el constructor del iterable, con los elementos resultados o procesados.
 
-#? 🤸🏻Ejercicio: vamos a mapear cada elemento de una lista, para por ejemplo elevarlo
+#? 🤸🏻Ejercicio: vamos a mapear cada elemento de una lista, para elevarlo
 nums = [1, 2, 3, 4]
 
-# 1. Definimos una función simple,💡mas adelante veremos funciones a detalle.
+# 1. Definimos una la función 1er parametro
+# 💡mas adelante veremos funciones a detalle.
 def calcular_cubo(numero):
     return numero ** 3
 
 list_cubos = list(map(calcular_cubo, nums))
 print(list_cubos)  # [1, 8, 27, 64]
-
 
 #? 💡en vez de usar una función definida, podemos usar una función anónima con lambda
 descuento_20 = list(map(lambda x: x-(x*0.20), nums)) # x es cada elemento de la lista nums
@@ -106,7 +106,7 @@ print(suma(3, 4))  # Salida: 7
 print((lambda x, y: x + y)(3, 4))  # Salida: 7
 
 
-#? ⭐ metodo filter()
+#? ⭐ metodo filter(): parametros:
 # 1er parametro: función critero para filtrar elementos, mediante condicion logica a evaluar
 # 2do parametro: iterable (lista, tupla...) de los elementos a filtrar
 # Rertorna:👀 otro iterable usando el constructor del iterable, con los elementos filtrados.

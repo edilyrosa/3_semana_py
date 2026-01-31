@@ -5,10 +5,7 @@
 # Cada dato coleccionado es un elemento.
 # La lista puede contener cualquier tipo de dato, incluso otras listas (matrices).
 # Al elemento se accede por su posición (índice, que comienza desde 0), para:
-# √ Obtenerlo, 
-# √ Reasignale valor, 
-# √ Eliminarlo... Entonces las listas son mutables.
-# √ Se sabe su tamaño con la función con len(my_list).
+# √ Obtenerlo, √ Reasignale valor, √ Eliminarlo... Entonces las listas son mutables.
 #!❌ Acceder a una posición fuera de rango, genera un error.
 
 
@@ -75,19 +72,18 @@ print(lista_numeros.index(3, 1, 5)) # 2 → Busco y retorno el 3 entre las posic
 # y pruebes. Los usaremos mas adelante.
 
 
-# # *************************** 2. TUPLAS: (tuple)
-# # Son colecciones ordenadas de datos, el orden es secuencial y preciso.
-# # Cada dato coleccionado es un elemento.
-# # A diferencia de las listas, las tuplas son inmutables, no se pueden modificar, 
-# agregar o eliminar elementos.
-# # Se sabe su tamaño con la función con len(my_tuple).
+# *************************** 2. TUPLAS: (tuple)
+# Son colecciones ordenadas de datos, el orden es secuencial y preciso.
+# Cada dato coleccionado es un elemento.
+# A diferencia de las listas, son inmutables, no se pueden modificar, agregar o eliminar elementos.
+# si ese es tu objetivo, haz un casting a lista.
 # #! Acceder a una posición fuera de rango, genera un error.
 
 # #?⭐ Creación de una tupla: Se representa, conteniendo a sus elementos entre paréntesis ()
 tupla_numeros = (1,2,3,4,'5', False) #Con parentesis.
 print(tupla_numeros)
 
-tupla = 1, 2, True # Otra forma de crear tuplas, sin los parentesis.
+tupla = 1, 2, True # Otra forma de crear tuplas, SIN los parentesis.
 print(tupla)
 
 # #& 💡Utilidad de las tuplas: 
@@ -121,8 +117,6 @@ print('lista desde tupla', lista_desde_tupla) # [1, 2, 3, 4, '5', False]
 print('Lista', lista_numeros) # (1, 2, 3, 4, '5', False)
 tupla_desde_lista = tuple(lista_numeros)
 print('tupla desde lista', tupla_desde_lista) # (1, 2, 3, 4, 5, False)
-
-
 
 #************************** TDD ESTRUCUTRALES: STR (CADENA DE TEXTO)
 nombre = 'Edily'
