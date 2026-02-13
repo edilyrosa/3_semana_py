@@ -63,7 +63,7 @@ print(type(personaje['edad'])) #<class 'int'>
 
 
 
-# metodos mas importantes en los dict
+#* metodos mas importantes en los dict
 print(personaje.keys()) #dict_keys(['nombre', 'edad', 'peso', 'poderes', 'hobbies', 'mujer', 2, False, ('notas', 'materia'), (0, 0), (1, 5), (10, 2), 'vidas', 'precio'])
 
 for k in personaje.keys():
@@ -76,7 +76,9 @@ for v in personaje.values():
     
 for k,v in personaje.items():
     print(f"{k} - {v}")
+
+
     
-mi_list =  list( (k,v)  for k,v in personaje.items() )
+mi_list =  list( (k,v)  for k,v in personaje.items() ) #TODO: esto es una list comprehension.
 print(mi_list)
 print(personaje)
